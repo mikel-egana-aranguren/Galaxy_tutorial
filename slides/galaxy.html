@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>reveal.js - The HTML Presentation Framework</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Mikel Egaña Aranguren" >
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<link rel="stylesheet" href="css/reveal.css">
+<!-- 		<link rel="stylesheet" href="css/theme/default.css" id="theme"> -->
+		<link rel="stylesheet" href="css/theme/simple.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+			<section>
+				<section>
+					<br>
+					<h2>Galaxy tutorial</h2>
+					<br>
+					
+					<h3>CBGP 2013</h3>
+					<br>
+					<p>
+						<small>Mikel Egaña Aranguren</small><br>
+						<small><a href="http://mikeleganaaranguren.com/">http://mikeleganaaranguren.com</a> / <a href="mailto:mikel.egana.aranguren@upm.es">mikel.egana.aranguren@upm.es</a></small><br>
+						<small>Biological Informatics Group (<a href="http://wilkinsonlab.info/">http://wilkinsonlab.info</a>), CBGP, UPM, Madrid</small>
+						
+					</p>
+				</section>
+				<section>
+					<br>
+					<h2>Galaxy tutorial</h2>
+					<br>
+					<br>
+					<p align="left"><a href="https://mikeleganaaranguren.wordpress.com/teaching/">https://mikeleganaaranguren.wordpress.com/teaching/</a></p><br> 
+					<p align="left"><a href="https://github.com/mikel-egana-aranguren/Galaxy_tutorial">https://github.com/mikel-egana-aranguren/Galaxy_tutorial</a></small><br>
+					</p>
+							<br><br>
+							<img  src="by-nc-sa.eu_petit.png" alt="by-nc-sa">
+						
+				</section>
+
+			</section>
+			<section>
+				<section>
+					<h2>What is Galaxy?</h2>
+				</section>
+				<section>
+					<h3>What is Galaxy for?</h3>
+					<br>
+					<p align="left">A web server that offers the usual bioinformatics tools in a central space with ... </p><br>
+					<p align="left" class="fragment roll-in">... data storage</p><br>
+					<p align="left" class="fragment roll-in">... history</p><br>
+					<p align="left" class="fragment roll-in">... workflows</p><br>
+				</section>
+				<section>
+					<h3>Why is Galaxy so good?</h3>
+					<br>
+					<p align="left">Very complex computational analyses</p>
+					<p align="left" class="fragment roll-in">... easily</p>
+					<p align="left" class="fragment roll-in">... with provenance</p><br>
+					<p align="left" class="fragment roll-in">Reproducible science!</p><br>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h2>Using Galaxy</h2>
+				</section>
+				<section>
+					<h3>Galaxy 101</h3>
+					<br>
+					<p align="left"><a href="http://usegalaxy.org/u/aun1/p/galaxy101">http://usegalaxy.org/u/aun1/p/galaxy101</a></p><br>
+				</section>
+				<section>
+					<h3>Galaxy @ CBGP</h3>
+					<br>
+					<p align="left"><a href="http://biordf.org:8090/">http://biordf.org:8090/</a></p><br>
+				</section>
+				<section>
+					<h3>Local installation</h3>
+					<br>
+					<p align="left">Usually a good idea to install Galaxy locally, even just for yourself:</p><br>					
+					<p align="left" class="fragment roll-in">... provenance when you sit down and write the paper</p><br>
+					<p align="left" class="fragment roll-in">... sensitive/large data</p><br>
+					<p align="left" class="fragment roll-in">... install/develop other Galaxy tools</p><br>
+				</section>
+				<section>
+					<h3>Local installation requirements</h3>
+					<br>
+					<p align="left">Some UNIX flavour (GNU/Linux, MAC OS X) </p><br>
+					<p align="left">Python </p><br>
+					<p align="left">Mercurial (hg)</p><br>
+				</section>
+				<section>
+					<h3>Install with Mercurial</h3>
+					<br>
+					<p align="left"><code>hg clone https://bitbucket.org/galaxy/galaxy-dist/</code> </p><br>
+					<p align="left"><code>cd galaxy-dist</code></p><br>
+					<p align="left"><code>hg update stable</code> </p><br>
+				</section>
+				<section>
+					<h3>Run and stop</h3>
+					<br>
+					<p align="left"><code>./run.sh</code></p><br>
+					<p align="left">(<code>nohup ./run.sh &amp;</code>)</p><br>
+					<p align="left">Open http://127.0.0.1:8080/</p><br>
+					<p align="left">Close terminal, <code>CTRL-C</code> or <code>kill -9 PID</code></p><br>
+				</section>
+				<section>
+					<h3>Update</h3>
+					<br>
+					<p align="left"><code>hg incoming</code></p><br>
+					<p align="left"><code>hg pull -u</code></p><br>
+				</section>
+			</section>
+			
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

@@ -56,8 +56,9 @@
 					<br>
 					<br>
 					<p align="left"><a href="https://mikeleganaaranguren.wordpress.com/teaching/">https://mikeleganaaranguren.wordpress.com/teaching/</a></p><br> 
-					<p align="left"><a href="https://github.com/mikel-egana-aranguren/Galaxy_tutorial">https://github.com/mikel-egana-aranguren/Galaxy_tutorial</a></small><br>
+					<p align="left">GitHub repo (slides, data, documentation, ...): <a href="https://github.com/mikel-egana-aranguren/Galaxy_tutorial">https://github.com/mikel-egana-aranguren/Galaxy_tutorial</a></p><br>
 					</p>
+					<p align="left">GitHub page (this slides): <a href="http://mikel-egana-aranguren.github.io/Galaxy_tutorial/galaxy.html">http://mikel-egana-aranguren.github.io/Galaxy_tutorial/galaxy.html</a></p>
 							<br><br>
 							<img  src="by-nc-sa.eu_petit.png" alt="by-nc-sa">
 						
@@ -83,6 +84,33 @@
 					<p align="left" class="fragment roll-in">... easily</p>
 					<p align="left" class="fragment roll-in">... with provenance</p><br>
 					<p align="left" class="fragment roll-in">Reproducible science!</p><br>
+					
+				</section>
+				<section>
+					<h3>On reproducible science</h3>
+					<br>
+					<img src="PLOS_10_rules.png">
+				</section>
+				<section>
+					<h3>On reproducible science</h3>
+					<br>
+					<p align="left" class="fragment roll-in">Rule 1: For Every Result, Keep Track of How It Was Produced</p><br>
+					<p align="left" class="fragment roll-in">Rule 5: Record All Intermediate Results, When Possible in Standardized Formats</p><br>
+					<p align="left" class="fragment roll-in">Rule 9: Connect Textual Statements to Underlying Results</p><br>
+					<p align="left" class="fragment roll-in">Rule 10: Provide Public Access to Scripts, Runs, and Results</p><br>
+				</section>
+				<section>
+					<h3>On reproducible science</h3>
+					<br>
+					<img src="heteroplasmy.png">
+					<p align="right"><small><a href="http://usegalaxy.org/u/aun1/p/heteroplasmy">http://usegalaxy.org/u/aun1/p/heteroplasmy</a></small></p>
+				</section>
+				<section>
+					<h3>More information</h3>
+					<br>
+					<p align="left">Galaxy main server (Limitations on data size, computational resources): <a href="https://usegalaxy.org/">https://usegalaxy.org/</a></p><br>
+					<p align="left">Our own server at CBGP: <a href="http://biordf.org:8090/">http://biordf.org:8090/</a></p><br>
+					<p align="left">Galaxy documentation: <a href="http://wiki.galaxyproject.org/Learn">http://wiki.galaxyproject.org/Learn</a></p><br>
 				</section>
 			</section>
 			<section>
@@ -90,14 +118,26 @@
 					<h2>Using Galaxy</h2>
 				</section>
 				<section>
-					<h3>Galaxy 101</h3>
+					<h3>Main interface</h3>
+					<br>
+					<img src="galaxy_interface.png">
+				</section>
+				<section>
+					<h3>Hands-on 1 (Galaxy 101)</h3>
 					<br>
 					<p align="left"><a href="http://usegalaxy.org/u/aun1/p/galaxy101">http://usegalaxy.org/u/aun1/p/galaxy101</a></p><br>
 				</section>
 				<section>
-					<h3>Galaxy @ CBGP</h3>
+					<h3>Hands-on 2</h3>
 					<br>
+					upload data/x (get data >> upload file)
 					<p align="left"><a href="http://biordf.org:8090/">http://biordf.org:8090/</a></p><br>
+				</section>
+				<section>
+					<h3>Sharing your stuff</h3>
+					<br>
+					<p align="left">make workflow public, import export, (.ga file y regenerar con datos)</p><br> 
+					<p align="left">http://wiki.galaxyproject.org/Learn/Galaxy%20Pages</p><br>
 				</section>
 				<section>
 					<h3>Local installation</h3>
@@ -110,7 +150,7 @@
 				<section>
 					<h3>Local installation requirements</h3>
 					<br>
-					<p align="left">Some UNIX flavour (GNU/Linux, MAC OS X) </p><br>
+					<p align="left">Some UNIX flavour (<b>GNU/Linux</b>, MAC OS X?) </p><br>
 					<p align="left">Python </p><br>
 					<p align="left">Mercurial (hg)</p><br>
 				</section>
@@ -126,8 +166,8 @@
 					<br>
 					<p align="left"><code>./run.sh</code></p><br>
 					<p align="left">(<code>nohup ./run.sh &amp;</code>)</p><br>
-					<p align="left">Open http://127.0.0.1:8080/</p><br>
-					<p align="left">Close terminal, <code>CTRL-C</code> or <code>kill -9 PID</code></p><br>
+					<p align="left">Open http://127.0.0.1:8080/ and do your thing</p><br>
+					<p align="left">To stop (history, workflows etc. will be stored) close terminal, <code>CTRL-C</code> or <code>kill -9 PID</code></p><br>
 				</section>
 				<section>
 					<h3>Update</h3>
@@ -135,8 +175,23 @@
 					<p align="left"><code>hg incoming</code></p><br>
 					<p align="left"><code>hg pull -u</code></p><br>
 				</section>
+				<section>
+					<h3>Installing tools</h3>
+					<br>
+					<p align="left">Add yourself as admin (add <code>admin_users = your_email</code> to <code>universe_wsgi.ini</code>)</p><br>
+					<p align="left">Restart, log in and install through admin >> tool sheds </p><br>
+					<p align="left">or install manually* </p><br>
+				</section>
 			</section>
-			
+			<section>
+				<section>
+					<h3>Finishing remarks</h3>
+					<br>
+					<p align="left">Feel free to use biordf.org:8090 (No security/performance warranty though ;-)</p><br>
+					<p align="left">If you need a tool and you don't find it, let us know and perhaps we can develop it (specially if there is a version for shell)</p><br>
+					<p align="left">This presentation was produced using <a href="http://lab.hakim.se/reveal-js/#/">Reveal.js</a></p>
+				</section>
+			</section>
 
 			</div>
 

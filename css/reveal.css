@@ -311,6 +311,7 @@ body {
 }
 .reveal code {
 	font-family: monospace;
+	background-color:#FFFFCC;
 }
 .reveal pre code {
 	padding: 5px;

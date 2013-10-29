@@ -55,7 +55,7 @@
 					<h2>Galaxy tutorial</h2>
 					<br>
 					<br>
-					<p align="left"><a href="https://mikeleganaaranguren.wordpress.com/teaching/">https://mikeleganaaranguren.wordpress.com/teaching/</a></p><br> 
+<!-- 					<p align="left"><a href="https://mikeleganaaranguren.wordpress.com/teaching/">https://mikeleganaaranguren.wordpress.com/teaching/</a></p><br>  -->
 					<p align="left">GitHub repo (slides, data, documentation, ...): <a href="https://github.com/mikel-egana-aranguren/Galaxy_tutorial">https://github.com/mikel-egana-aranguren/Galaxy_tutorial</a></p><br>
 					</p>
 					<p align="left">GitHub page (this slides): <a href="http://mikel-egana-aranguren.github.io/Galaxy_tutorial/galaxy.html">http://mikel-egana-aranguren.github.io/Galaxy_tutorial/galaxy.html</a></p>
@@ -100,7 +100,7 @@
 					<p align="left" class="fragment roll-in">Rule 10: Provide Public Access to Scripts, Runs, and Results</p><br>
 				</section>
 				<section>
-					<h3>On reproducible science</h3>
+					<h3>Reproducible science: Galaxy for executable papers</h3>
 					<br>
 					<img src="heteroplasmy.png">
 					<p align="right"><small><a href="http://usegalaxy.org/u/aun1/p/heteroplasmy">http://usegalaxy.org/u/aun1/p/heteroplasmy</a></small></p>
@@ -110,7 +110,7 @@
 					<br>
 					<p align="left">Galaxy main server (Limitations on data size, computational resources): <a href="https://usegalaxy.org/">https://usegalaxy.org/</a></p><br>
 					<p align="left">Our own server at CBGP: <a href="http://biordf.org:8090/">http://biordf.org:8090/</a></p><br>
-					<p align="left">Galaxy documentation: <a href="http://wiki.galaxyproject.org/Learn">http://wiki.galaxyproject.org/Learn</a></p><br>
+					<p align="left">Galaxy documentation: <a href="http://wiki.galaxyproject.org">http://wiki.galaxyproject.org</a></p><br>
 				</section>
 			</section>
 			<section>
@@ -123,36 +123,91 @@
 					<img src="galaxy_interface.png">
 				</section>
 				<section>
-					<h3>Hands-on 1 (Galaxy 101)</h3>
+					<h3>Hands-on 1 (Guided exercise based on Galaxy 101)</h3>
 					<br>
 					<p align="left"><a href="http://usegalaxy.org/u/aun1/p/galaxy101">http://usegalaxy.org/u/aun1/p/galaxy101</a></p><br>
 				</section>
 				<section>
-					<h3>Hands-on 2</h3>
+					<h3>Hands-on 2 (On your own)</h3>
 					<br>
-					upload data/x (get data >> upload file)
+					<p align="left">What genes of <i>Arabidopsis thaliana</i> are annotated against the "cell cycle" (GO:0007049) subtree of the Gene Ontology (GO)?</p><br>
 					<p align="left"><a href="http://biordf.org:8090/">http://biordf.org:8090/</a></p><br>
+					
+				</section>
+				<section>
+					<h3>Hints (General steps)</h3>
+					<br>
+					<p align="left">
+						<ol>
+							<li class="fragment roll-in"> <code> get data; upload file</code>
+								<ul>
+									<li><code>data/gene_ontology.1_2.obo</code> (GO)</li>
+									<li><code>data/gene_association.tair</code> (GAF)</li>
+								</ul>
+							</li>
+							<li class="fragment roll-in">Prepare GAF by removing lines starting with "!" (with a regular expression) and converting tab separated content to actual columns</li>
+							<li class="fragment roll-in"> Use <code>OBO ontology manipulation; Get the descendent terms of a given OBO term</code> to obtain the cell cycle subtree from GO</li>
+							<li class="fragment roll-in">Compare the GO ids list with GAF to extract the rows that match</li>
+						</ol>
+					</p><br>
+				</section>
+				<section>
+					<h3>Solution</h3>
+					<br>
+					<p align="left">Use the <a href="http://biordf.org:8090/u/mikel-egana-aranguren/w/galaxy-tutorial-at-cbgp-hands-on-2">Workflow</a> (import and run) or the <a href="http://biordf.org:8090/u/mikel-egana-aranguren/h/galaxy-tutorial-at-cbgp">history</a></p><br>
+
+					<img src="solution.png">
+					
+					
+					
+<!--					upload ontology
+					
+						OBO ontology manipulation; Get the descendent terms of a given OBO term
+						
+							GO:0007049
+					
+					upload GAF file
+					
+						filter and sort;Select lines that match an expression
+						
+							NOT matching 
+							
+							^!.*
+							
+						Text mainpulation; convert delimiters to TAB
+						
+							Tab
+							
+					Join, subtract and group; Compare two Datasets to find common or distinct rows
+					
+							C4
+							C1
+							Matching first dataset-->
+					
+
+					
+					
 				</section>
 				<section>
 					<h3>Sharing your stuff</h3>
 					<br>
-					<p align="left">make workflow public, import export, (.ga file y regenerar con datos)</p><br> 
-					<p align="left">http://wiki.galaxyproject.org/Learn/Galaxy%20Pages</p><br>
+					<p align="left">You can make workflows and histories public with a URL, share with other users, and import/export them</p><br> 
+					<p align="left">You can also create a <a href="http://wiki.galaxyproject.org/Learn/Galaxy%20Pages">Galaxy page</a></p><br>
 				</section>
 				<section>
 					<h3>Local installation</h3>
 					<br>
 					<p align="left">Usually a good idea to install Galaxy locally, even just for yourself:</p><br>					
 					<p align="left" class="fragment roll-in">... provenance when you sit down and write the paper</p><br>
-					<p align="left" class="fragment roll-in">... sensitive/large data</p><br>
+					<p align="left" class="fragment roll-in">... sensitive data</p><br>
 					<p align="left" class="fragment roll-in">... install/develop other Galaxy tools</p><br>
 				</section>
 				<section>
 					<h3>Local installation requirements</h3>
 					<br>
-					<p align="left">Some UNIX flavour (<b>GNU/Linux</b>, MAC OS X?) </p><br>
-					<p align="left">Python </p><br>
-					<p align="left">Mercurial (hg)</p><br>
+					<p align="left">Some UNIX flavour (<b>GNU/Linux</b>, MAC OS X*) </p><br>
+					<p align="left">Python</p><br>
+					<p align="left">Mercurial (<code>hg</code>)</p><br>
 				</section>
 				<section>
 					<h3>Install with Mercurial</h3>
@@ -162,12 +217,22 @@
 					<p align="left"><code>hg update stable</code> </p><br>
 				</section>
 				<section>
-					<h3>Run and stop</h3>
+					<h3>Use</h3>
 					<br>
-					<p align="left"><code>./run.sh</code></p><br>
-					<p align="left">(<code>nohup ./run.sh &amp;</code>)</p><br>
-					<p align="left">Open http://127.0.0.1:8080/ and do your thing</p><br>
-					<p align="left">To stop (history, workflows etc. will be stored) close terminal, <code>CTRL-C</code> or <code>kill -9 PID</code></p><br>
+					<p align="left">Run:
+					<ul class="fragment roll-in">
+					<li><code>./run.sh</code></li>
+					<li><code>nohup ./run.sh &amp;</code></li>
+					</ul>
+					</p><br>
+					<p align="left" class="fragment roll-in">Open <a href="http://127.0.0.1:8080/">http://127.0.0.1:8080/</a> and do your thing</p><br>
+					<p align="left" class="fragment roll-in">Stop (history, workflows etc. will be stored but execution will interrupt): 
+					<ul class="fragment roll-in">
+					<li>Close terminal or <code>CTRL-C</code></li>
+					<li><code>kill -9 PID</code></li>
+					</ul>
+					</p>
+
 				</section>
 				<section>
 					<h3>Update</h3>
@@ -179,16 +244,16 @@
 					<h3>Installing tools</h3>
 					<br>
 					<p align="left">Add yourself as admin (add <code>admin_users = your_email</code> to <code>universe_wsgi.ini</code>)</p><br>
-					<p align="left">Restart, log in and install through admin >> tool sheds </p><br>
-					<p align="left">or install manually* </p><br>
+					<p align="left">Restart, log in and install through <code>admin; tool sheds</code> </p><br>
+					<p align="left">or install manually* (Very basic XML and UNIX skills needed) </p><br>
 				</section>
 			</section>
 			<section>
 				<section>
 					<h3>Finishing remarks</h3>
 					<br>
-					<p align="left">Feel free to use biordf.org:8090 (No security/performance warranty though ;-)</p><br>
-					<p align="left">If you need a tool and you don't find it, let us know and perhaps we can develop it (specially if there is a version for shell)</p><br>
+					<p align="left">Feel free to use <a href="http://biordf.org:8090/">http://biordf.org:8090/</a> (No security/performance warranty though ;-)</p><br>
+					<p align="left">If you need a tool and you don't find it in the tool shed, let us know and perhaps we can develop it (specially if there is a CLI version of the tool and/or the tool is interesting).</p><br>
 					<p align="left">This presentation was produced using <a href="http://lab.hakim.se/reveal-js/#/">Reveal.js</a></p>
 				</section>
 			</section>
